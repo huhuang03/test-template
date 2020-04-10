@@ -1,0 +1,20 @@
+The project template util.
+
+
+* Usage
+#+BEGIN_SRC 
+mytmp -n the_name -t the_template [-d outfolder name].
+#+END_SRC
+
+** For example
+#+BEGIN_SRC 
+mytmp -n t_cmake -t cmake
+#+END_SRC
+
+will create
+#+BEGIN_SRC
+- build
+- src
+    - CMakeList.txt
+    - main.cc
+#+END_SRC
