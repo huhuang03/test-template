@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import Project from "./project"
 import Config from "./config"
 

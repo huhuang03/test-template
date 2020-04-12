@@ -1,5 +1,5 @@
-import Template from "../template";
-import OutFile from "../out_file";
+import Template from "../../template";
+import OutFile from "../../out_file";
 
 class TempalteCmake extends Template {
     constructor() {
