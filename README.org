@@ -1,9 +1,13 @@
 The project template util.
 
+* Install
+- clone this project.
+- run `npm instal`, `npm build`
+- run `npm link`
 
 * Usage
 #+BEGIN_SRC 
-mytmp -n the_name -t the_template [-d outfolder name].
+mytmp -n project_name -t template_name [-o outFolder].
 #+END_SRC
 
 ** For example
@@ -13,8 +17,9 @@ mytmp -n t_cmake -t cmake
 
 will create
 #+BEGIN_SRC
-- build
-- src
-    - CMakeList.txt
-    - main.cc
+- t_cmake
+    - build
+    - src
+        - CMakeList.txt
+        - main.cc
 #+END_SRC
