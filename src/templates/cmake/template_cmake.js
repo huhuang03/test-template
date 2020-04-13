@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 var template_1 = require("../../template");
 var out_file_1 = require("../../out_file");
+var path = require("path");
 var TempalteCmake = /** @class */ (function (_super) {
     __extends(TempalteCmake, _super);
     function TempalteCmake() {
@@ -22,8 +23,8 @@ var TempalteCmake = /** @class */ (function (_super) {
     }
     TempalteCmake.prototype.getOutput = function () {
         return [
-            new out_file_1["default"]('CMakeLists.txt', 'cmake_minimum_required(VERSION 3.12)\ncmake_minimum_required(VERSION 3.12)\n\nadd_executable(main main.cc)'),
-            new out_file_1["default"]('src/main.cc', '#include <string>\n#include <string>\n\nusing namespace std;\n\nint main() {\n    return 0;\n}'),
+            out_file_1["default"].fromLocalFile(path.resolve(__dirname, '../../../template_data/cmake/CMakeLists.txt')),
+            out_file_1["default"].fromLocalFile(path.resolve(__dirname, '../../../template_data/cmake/main.cc')),
             new out_file_1["default"]('build', '', true),
         ];
     };

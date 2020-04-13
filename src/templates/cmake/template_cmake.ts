@@ -1,5 +1,6 @@
 import Template from "../../template";
 import OutFile from "../../out_file";
+import * as path from 'path';
 
 class TempalteCmake extends Template {
     constructor() {
@@ -8,8 +9,8 @@ class TempalteCmake extends Template {
 
     getOutput(): OutFile[] {
         return [
-            new OutFile('CMakeLists.txt', 'cmake_minimum_required(VERSION 3.12)\ncmake_minimum_required(VERSION 3.12)\n\nadd_executable(main main.cc)'),
-            new OutFile('src/main.cc', '#include <string>\n#include <string>\n\nusing namespace std;\n\nint main() {\n    return 0;\n}'),
+            OutFile.fromLocalFile(path.resolve(__dirname, '../../../template_data/cmake/CMakeLists.txt')),
+            OutFile.fromLocalFile(path.resolve(__dirname, '../../../template_data/cmake/main.cc')),
             new OutFile('build', '', true),
         ];
     }

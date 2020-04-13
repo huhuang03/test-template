@@ -20,7 +20,11 @@ class Project {
         }
 
         template.getOutput().forEach(output => {
-            fs.outputFileSync(path.resolve(config.outFolder, output.path), output.content);
+            if (!output.isFolder) {
+                fs.outputFileSync(path.resolve(config.outFolder, output.path), output.content);
+            } else {
+                fs.mkdir(path.resolve(config.outFolder, output.path))
+            }
         });
     }
 

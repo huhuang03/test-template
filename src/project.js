@@ -18,7 +18,12 @@ var Project = /** @class */ (function () {
             throw "Can't find template " + config.templateName;
         }
         template.getOutput().forEach(function (output) {
-            fs.outputFileSync(path.resolve(config.outFolder, output.path), output.content);
+            if (!output.isFolder) {
+                fs.outputFileSync(path.resolve(config.outFolder, output.path), output.content);
+            }
+            else {
+                fs.mkdir(path.resolve(config.outFolder, output.path));
+            }
         });
     };
     Project.ALL_TEMPLATES = [new template_css_1["default"](), new template_cmake_1["default"]()];
