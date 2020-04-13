@@ -1,8 +1,8 @@
 import Result from 'th_comm'
 
 class Config {
-    constructor(public name: string, public templateName: String, public outFolder: String) {
-        this.outFolder = this.outFolder || this.templateName;
+    constructor(public name: string, public templateName: string, public outFolder: string) {
+        this.outFolder = this.outFolder || this.name;
     }
 
     validate(): Result {

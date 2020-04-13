@@ -6,7 +6,7 @@ var Config = /** @class */ (function () {
         this.name = name;
         this.templateName = templateName;
         this.outFolder = outFolder;
-        this.outFolder = this.outFolder || this.templateName;
+        this.outFolder = this.outFolder || this.name;
     }
     Config.prototype.validate = function () {
         if (!this.name || !this.templateName || !this.outFolder) {

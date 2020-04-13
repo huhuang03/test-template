@@ -14,3 +14,5 @@ class TempalteCmake extends Template {
         ];
     }
 }
+
+export default TempalteCmake
