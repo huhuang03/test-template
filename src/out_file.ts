@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 class OutFile {
-    constructor(public path: string, public content: string, public isFolder: boolean = false) {}
+    constructor(public relatePath: string, public content: string, public isFolder: boolean = false) {}
 
     static fromLocalFile(localPath: string, outPath: string = ""): OutFile {
         if (!fs.existsSync(localPath)) {

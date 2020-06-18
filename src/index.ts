@@ -2,8 +2,13 @@
 
 import Project from "./project"
 import Config from "./config"
+import templateMgr from "./template/template_manager";
 
 const argv = require('yargs')
+.command('list', 'list all templates', (yargs) => {
+  console.log(`All tmplates:`);
+  console.log(`\t${templateMgr.tempaltes.map((t) => t.name).join("\n\t")}`);
+})
 .option('name', {
   alias: 'n',
   type: 'string',
@@ -21,5 +26,6 @@ const argv = require('yargs')
 })
 .argv
 
-
-new Project().build(new Config(argv.name, argv.tName, argv.out));
+if (!argv._[0]) { // has no command
+  new Project().build(new Config(argv.name, argv.tName, argv.out));
+}

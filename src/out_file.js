@@ -3,9 +3,9 @@ exports.__esModule = true;
 var fs = require("fs");
 var path = require("path");
 var OutFile = /** @class */ (function () {
-    function OutFile(path, content, isFolder) {
+    function OutFile(relatePath, content, isFolder) {
         if (isFolder === void 0) { isFolder = false; }
-        this.path = path;
+        this.relatePath = relatePath;
         this.content = content;
         this.isFolder = isFolder;
     }

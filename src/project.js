@@ -1,9 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var fs = require("fs-extra");
-var path = require("path");
-var template_css_1 = require("./templates/css/template_css");
-var template_cmake_1 = require("./templates/cmake/template_cmake");
+var template_manager_1 = require("./template/template_manager");
 var Project = /** @class */ (function () {
     function Project() {
     }
@@ -13,20 +10,12 @@ var Project = /** @class */ (function () {
             console.log(configValidate.msg);
             return;
         }
-        var template = Project.ALL_TEMPLATES.find(function (t) { return t.name == config.templateName; });
+        var template = template_manager_1["default"].tempaltes.find(function (t) { return t.name == config.templateName; });
         if (template == null) {
             throw "Can't find template " + config.templateName;
         }
-        template.getOutput().forEach(function (output) {
-            if (!output.isFolder) {
-                fs.outputFileSync(path.resolve(config.outFolder, output.path), output.content);
-            }
-            else {
-                fs.mkdir(path.resolve(config.outFolder, output.path));
-            }
-        });
+        template.write(config.outFolder);
     };
-    Project.ALL_TEMPLATES = [new template_css_1["default"](), new template_cmake_1["default"]()];
     return Project;
 }());
 exports["default"] = Project;

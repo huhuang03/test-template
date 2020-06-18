@@ -1,5 +1,5 @@
-import Template from "../../template";
-import OutFile from "../../out_file";
+import {Template} from "../../template";
+import OutFile from "../../../out_file";
 import * as path from 'path';
 
 class TemplateCss extends Template {

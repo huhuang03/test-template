@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "th-comm": "1.0.0",
+    "th-comm": "file:///usr/local/lib/node_modules/th-comm",
+    "ncp": "^2.0.0",
     "yargs": "^15.3.1"
   },
   "devDependencies": {

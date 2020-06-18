@@ -1,18 +1,21 @@
-Most times, it's boring to 
+A test project is a simple project for test some single through.
+And it's boring to create those project by hand.
+So this project is for create automatic.
+
+* Usage
+#+BEGIN_SRC shell
+mytmp -n project_name -t template_name [-o outFolder].
+#+END_SRC
+
 
 * Install
 - clone this project.
 - run `npm instal`, `npm build`
 - run `npm link`
 
-* Usage
-#+BEGIN_SRC 
-mytmp -n project_name -t template_name [-o outFolder].
-#+END_SRC
-
 ** For example
 #+BEGIN_SRC 
-mytmp -n t_cmake -t cmake
+mytmp -n t_string_concat -t cmake
 #+END_SRC
 
 will create
@@ -25,3 +28,4 @@ will create
 #+END_SRC
 
 * TODOS
+- If provide no param, print the all template list

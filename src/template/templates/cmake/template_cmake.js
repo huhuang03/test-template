@@ -14,19 +14,20 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var template_1 = require("../../template");
-var out_file_1 = require("../../out_file");
+var out_file_1 = require("../../../out_file");
 var path = require("path");
-var TemplateCss = /** @class */ (function (_super) {
-    __extends(TemplateCss, _super);
-    function TemplateCss() {
-        return _super.call(this, "css") || this;
+var TempalteCmake = /** @class */ (function (_super) {
+    __extends(TempalteCmake, _super);
+    function TempalteCmake() {
+        return _super.call(this, "cmake") || this;
     }
-    TemplateCss.prototype.getOutput = function () {
+    TempalteCmake.prototype.getOutput = function () {
         return [
-            out_file_1["default"].fromLocalFile(path.resolve(__dirname, "../../../template_data/css/index.html")),
-            out_file_1["default"].fromLocalFile(path.resolve(__dirname, "../../../template_data/css/styles.css"))
+            out_file_1["default"].fromLocalFile(path.resolve(__dirname, '../../../template_data/cmake/CMakeLists.txt')),
+            out_file_1["default"].fromLocalFile(path.resolve(__dirname, '../../../template_data/cmake/main.cc')),
+            new out_file_1["default"]('build', '', true),
         ];
     };
-    return TemplateCss;
-}(template_1["default"]));
-exports["default"] = TemplateCss;
+    return TempalteCmake;
+}(template_1.Template));
+exports["default"] = TempalteCmake;
