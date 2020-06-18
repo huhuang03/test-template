@@ -1,11 +1,4 @@
-* ln
-
-Yes, some things you need a simple project to test a though. 
-But the simple project is not a single file that need some time to build.
-So this project will give the ablity to create the bootstrap porject.
-
-
-The project template util.
+Most times, it's boring to 
 
 * Install
 - clone this project.
@@ -30,3 +23,5 @@ will create
         - CMakeList.txt
         - main.cc
 #+END_SRC
+
+* TODOS

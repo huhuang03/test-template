@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var th_comm_1 = require("th_comm");
+var th_comm_1 = require("th-comm");
 var Config = /** @class */ (function () {
     function Config(name, templateName, outFolder) {
         this.name = name;

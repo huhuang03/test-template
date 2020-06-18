@@ -1,4 +1,4 @@
-import Result from 'th_comm'
+import Result from 'th-comm'
 
 class Config {
     constructor(public name: string, public templateName: string, public outFolder: string) {
