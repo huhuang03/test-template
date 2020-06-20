@@ -28,4 +28,4 @@ will create
 #+END_SRC
 
 * TODOS
-- If provide no param, print the all template list
+- replace all place holder
