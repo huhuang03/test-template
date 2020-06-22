@@ -15,7 +15,7 @@ class Project {
             throw `Can't find template ${config.templateName}`
         }
 
-        template.write(config.outFolder)
+        template.write(config.outFolder, config)
     }
 
 }

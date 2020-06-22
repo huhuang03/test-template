@@ -23,7 +23,7 @@ class TemplateManager {
         })
     }
 
-    createTemplateFromFodler(folderPath: string) {
+    createTemplateFromFodler(folderPath: string): ITemplate {
         var fullPath = path.resolve(folderPath)
         if (!fs.existsSync(fullPath)) {
             console.error("file not exist when create template from folder, folder: ", folderPath);

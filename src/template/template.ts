@@ -1,6 +1,7 @@
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import OutFile from "../out_file";
+import Config from '../config'
 
 abstract class ITemplate {
     constructor(public name: String) {
@@ -10,7 +11,7 @@ abstract class ITemplate {
     }
 
 
-    abstract write(outFolder: string)
+    abstract write(outFolder: string, config: Config)
 }
 
 export abstract class Template extends ITemplate {
@@ -20,7 +21,7 @@ export abstract class Template extends ITemplate {
 
     abstract getOutput(): OutFile[]
 
-    write(outFolder: string) {
+    write(outFolder: string, config: Config) {
         this.getOutput().forEach(output => {
             if (!output.isFolder) {
                 fs.outputFileSync(path.resolve(outFolder, output.relatePath), output.content);
@@ -46,11 +47,30 @@ export class StaticFolderTempalte extends ITemplate {
        super(path.basename(folder));
     }
 
-    write(outFolder: string) {
+    write(outFolder: string, config: Config) {
         var ncp = require('ncp').ncp;
         ncp(this.folder, outFolder, (err: any) => {
             if (err) {
                 console.error(err)
+                return
+            }
+            this.replaceAllPlaceHolder(outFolder, config)
+        })
+    }
+
+    replaceAllPlaceHolder(folder, config: Config) {
+        fs.readdir(folder, (e, items) => {
+            if (e) {
+                console.log(e)
+                return
+            }
+            for (var item of items) {
+                var fullPath = path.join(folder, item)
+                if (fs.statSync(fullPath).isFile()) {
+                    var content = fs.readFileSync(fullPath, 'utf-8')
+                    content = content.replace(/\$NAME\$/g, config.name)
+                    fs.writeFileSync(fullPath, content)
+                }
             }
         })
     }

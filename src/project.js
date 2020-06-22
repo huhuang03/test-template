@@ -14,7 +14,7 @@ var Project = /** @class */ (function () {
         if (template == null) {
             throw "Can't find template " + config.templateName;
         }
-        template.write(config.outFolder);
+        template.write(config.outFolder, config);
     };
     return Project;
 }());

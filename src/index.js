@@ -6,7 +6,7 @@ var config_1 = require("./config");
 var template_manager_1 = require("./template/template_manager");
 var argv = require('yargs')
     .command('list', 'list all templates', function (yargs) {
-    console.log("All tmplates");
+    console.log("All tmplates:");
     console.log("\t" + template_manager_1["default"].tempaltes.map(function (t) { return t.name; }).join("\n\t"));
 })
     .option('name', {

@@ -29,7 +29,7 @@ var Template = /** @class */ (function (_super) {
     function Template(name) {
         return _super.call(this, name) || this;
     }
-    Template.prototype.write = function (outFolder) {
+    Template.prototype.write = function (outFolder, config) {
         this.getOutput().forEach(function (output) {
             if (!output.isFolder) {
                 fs.outputFileSync(path.resolve(outFolder, output.relatePath), output.content);
@@ -62,11 +62,31 @@ var StaticFolderTempalte = /** @class */ (function (_super) {
         _this.folder = folder;
         return _this;
     }
-    StaticFolderTempalte.prototype.write = function (outFolder) {
+    StaticFolderTempalte.prototype.write = function (outFolder, config) {
+        var _this = this;
         var ncp = require('ncp').ncp;
         ncp(this.folder, outFolder, function (err) {
             if (err) {
                 console.error(err);
+                return;
+            }
+            _this.replaceAllPlaceHolder(outFolder, config);
+        });
+    };
+    StaticFolderTempalte.prototype.replaceAllPlaceHolder = function (folder, config) {
+        fs.readdir(folder, function (e, items) {
+            if (e) {
+                console.log(e);
+                return;
+            }
+            for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
+                var item = items_1[_i];
+                var fullPath = path.join(folder, item);
+                if (fs.statSync(fullPath).isFile()) {
+                    var content = fs.readFileSync(fullPath, 'utf-8');
+                    content = content.replace(/\$NAME\$/g, config.name);
+                    fs.writeFileSync(fullPath, content);
+                }
             }
         });
     };
