@@ -12,7 +12,7 @@ const argv = require('yargs')
 .option('name', {
   alias: 'n',
   type: 'string',
-  description: 'The project name'
+  description: 'The project name.(But I don\'t what this mean.)'
 })
 .option('tName', {
   alias: 't',
@@ -28,4 +28,4 @@ const argv = require('yargs')
 
 if (!argv._[0]) { // has no command
   new Project().build(new Config(argv.name, argv.tName, argv.out));
-}
+} 

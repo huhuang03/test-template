@@ -11,9 +11,12 @@ class Project {
         }
 
         var template = templateMgr.tempaltes.find((t) => t.name == config.templateName);
+
         if (template == null) {
             throw `Can't find template ${config.templateName}`
         }
+
+        console.log(`begin to write template ${config.templateName}`);
 
         template.write(config.outFolder, config)
     }

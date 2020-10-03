@@ -12,7 +12,7 @@ var argv = require('yargs')
     .option('name', {
     alias: 'n',
     type: 'string',
-    description: 'The project name'
+    description: 'The project name.(But I don\'t what this mean.)'
 })
     .option('tName', {
     alias: 't',
