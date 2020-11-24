@@ -6,7 +6,7 @@ class Project {
     build(config: Config) {
         var configValidate = config.validate();
         if (!configValidate.isOk()) {
-            console.log(configValidate.msg);
+            console.error(configValidate.msg);
             return;
         }
 

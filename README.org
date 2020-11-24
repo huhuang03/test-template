@@ -1,6 +1,9 @@
+It's a tool to crate a test project by template type.
+
+
 A test project is a simple project for test some single through.
 And it's boring to create those project by hand.
-So this project is for create automatic.
+So this project is for create by code.
 
 * Usage
 #+BEGIN_SRC shell
@@ -10,8 +13,7 @@ mytmp -n project_name -t template_name [-o outFolder].
 
 * Install
 - clone this project.
-- run `npm instal`, `npm build`
-- run `npm link`
+- run `npm install`, `npm build`, `npm link`
 
 ** For example
 #+BEGIN_SRC 
