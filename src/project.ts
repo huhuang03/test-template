@@ -11,7 +11,6 @@ class Project {
 
     build(config: Config) {
         var configValidate = config.validate();
-        console.log(configValidate);
         if (!configValidate.isOk()) {
             console.error(configValidate.msg);
             return;

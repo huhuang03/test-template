@@ -13,7 +13,6 @@ var Project = /** @class */ (function () {
             console.error(configValidate.msg);
             return;
         }
-        console.log("333");
         var template = template_manager_1["default"].tempaltes.find(function (t) { return t.name == config.templateName; });
         if (template == null) {
             throw "Can't find template " + config.templateName;
