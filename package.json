@@ -31,6 +31,7 @@
     "@types/node": "^13.11.1"
   },
   "bin": {
-    "mytmp": "src/index.js"
+    "mytmp": "src/index.js",
+    "t": "src/index.js"
   }
 }

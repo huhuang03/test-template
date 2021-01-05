@@ -4,7 +4,8 @@ import OutFile from "../out_file";
 import Config from '../config'
 
 abstract class ITemplate {
-    constructor(public name: String) {
+
+    constructor(public name: string) {
         if (!this.name) {
             throw "Must specify name";
         }
@@ -15,7 +16,7 @@ abstract class ITemplate {
 }
 
 export abstract class Template extends ITemplate {
-    constructor(name: String) {
+    constructor(name: string) {
         super(name)
     }
 
@@ -33,7 +34,7 @@ export abstract class Template extends ITemplate {
 }
 
 class StaticTempalte extends Template {
-    constructor(public name: String, public outFile: OutFile[]) {
+    constructor(public name: string, public outFile: OutFile[]) {
         super(name)
     }
 

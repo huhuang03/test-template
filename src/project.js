@@ -3,13 +3,17 @@ exports.__esModule = true;
 var template_manager_1 = require("./template/template_manager");
 var Project = /** @class */ (function () {
     function Project() {
+        this.templates = [];
+        this.templates = template_manager_1["default"].tempaltes;
     }
     Project.prototype.build = function (config) {
         var configValidate = config.validate();
+        console.log(configValidate);
         if (!configValidate.isOk()) {
-            console.log(configValidate.msg);
+            console.error(configValidate.msg);
             return;
         }
+        console.log("333");
         var template = template_manager_1["default"].tempaltes.find(function (t) { return t.name == config.templateName; });
         if (template == null) {
             throw "Can't find template " + config.templateName;
