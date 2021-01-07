@@ -14,5 +14,8 @@ gdb: install
 	adb forward tcp:1337 tcp:1337
 	adb shell "/data/local/tmp/gdbserver :1377 /data/local/tmp/helloworld.out"
 
+gdb_client:
+	/Users/th/Library/Android/sdk/ndk/21.1.6352462/prebuilt/darwin-x86_64/bin/gdb -ex 'target remote localhost:1337' -ex 'layout asm' --ex 'layout r'
+
 clean:
 	rm -rf *.out
