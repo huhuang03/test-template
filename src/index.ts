@@ -9,6 +9,7 @@ const argv = require('yargs')
   console.log(`All tmplates:`);
   console.log(`\t${templateMgr.tempaltes.map((t) => t.name).join("\n\t")}`);
 })
+// Can delete?? Maybe.
 .option('name', {
   alias: 'n',
   type: 'string',
