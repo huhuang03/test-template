@@ -1,21 +1,23 @@
+It's a tool to crate a test project by template type.
+
+
 A test project is a simple project for test some single through.
 And it's boring to create those project by hand.
-So this project is for create automatic.
+So this project is for create by code.
 
 * Usage
 #+BEGIN_SRC shell
-mytmp -n project_name -t template_name [-o outFolder].
+t template_name
 #+END_SRC
 
 
 * Install
 - clone this project.
-- run `npm instal`, `npm build`
-- run `npm link`
+- run `npm run link`
 
 ** For example
 #+BEGIN_SRC 
-mytmp -n t_string_concat -t cmake
+t cmake
 #+END_SRC
 
 will create
@@ -28,4 +30,6 @@ will create
 #+END_SRC
 
 * TODOS
+- no args, print all templates
+- t template work
 - replace all place holder
