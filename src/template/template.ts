@@ -61,6 +61,9 @@ export class StaticFolderTempalte extends ITemplate {
 
     replaceAllPlaceHolder(folder, config: Config) {
         fs.readdir(folder, (e, items) => {
+            if (folder.contains('build')) {
+                return
+            }
             if (e) {
                 console.log(e)
                 return
