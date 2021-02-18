@@ -8,7 +8,6 @@ var Project = /** @class */ (function () {
     }
     Project.prototype.build = function (config) {
         var configValidate = config.validate();
-        console.log(configValidate);
         if (!configValidate.isOk()) {
             console.error(configValidate.msg);
             return;

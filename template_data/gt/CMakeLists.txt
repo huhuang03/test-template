@@ -13,6 +13,7 @@ project(gt)
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 include_directories(${Qt5_INCLUDE_DIRS})
 
+file(GLOB_RECURSE gt_SRC *.h *.cpp)
+add_executable(gt ${gt_SRC})
 
-add_executable(gt main.cc)
 target_link_libraries(gt Qt5::Widgets)

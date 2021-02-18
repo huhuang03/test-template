@@ -11,15 +11,11 @@ const parser = require('yargs')
   console.log(`All tmplates:`);
   console.log(`\t${templateMgr.tempaltes.map((t) => t.name).join("\n\t")}`);
 })
-<<<<<<< HEAD
-// Can delete?? Maybe.
-=======
 .option('tName', {
   alias: 't',
   type: 'string',
   description: '[-t] The tempalte name'
 })
->>>>>>> 77ad852794a39040bbd1a9571bff8a9a16adb9ef
 .option('name', {
   alias: 'n',
   type: 'string',

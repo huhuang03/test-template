@@ -43,6 +43,8 @@ class StaticTempalte extends Template {
     }
 }
 
+const CONFIG_FILE_NAME = "mytmp_config.json"
+
 export class StaticFolderTempalte extends ITemplate {
     constructor(public folder: string) {
        super(path.basename(folder));
@@ -50,7 +52,17 @@ export class StaticFolderTempalte extends ITemplate {
 
     write(outFolder: string, config: Config) {
         var ncp = require('ncp').ncp;
-        ncp(this.folder, outFolder, (err: any) => {
+        ncp(this.folder, outFolder, {
+            filter: (fname) => {
+                if (fname.includes(".idea") || fname.includes("cmake-build-debug")) {
+                    return false
+                }
+                if (fname.endsWith(CONFIG_FILE_NAME)) {
+                    return false
+                }
+                return true
+            }
+        }, (err: any) => {
             if (err) {
                 console.error(err)
                 return
@@ -59,16 +71,29 @@ export class StaticFolderTempalte extends ITemplate {
         })
     }
 
+    // has bug that can only replace in level 0
     replaceAllPlaceHolder(folder, config: Config) {
         fs.readdir(folder, (e, items) => {
-            if (folder.contains('build')) {
-                return
-            }
+            // if (folder.includes('build')) {
+            //     return
+            // }
+
+            // if (folder == ".idea") {
+            //     return
+            // }
+
+            // if (folder == "mytmp_config.json") {
+            //     return
+            // }
+
             if (e) {
                 console.log(e)
                 return
             }
+
             for (var item of items) {
+                // console.log("folder: " + folder);
+                // console.log("item: " + item);
                 var fullPath = path.join(folder, item)
                 if (fs.statSync(fullPath).isFile()) {
                     var content = fs.readFileSync(fullPath, 'utf-8')

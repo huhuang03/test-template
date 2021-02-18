@@ -65,7 +65,18 @@ var StaticFolderTempalte = /** @class */ (function (_super) {
     StaticFolderTempalte.prototype.write = function (outFolder, config) {
         var _this = this;
         var ncp = require('ncp').ncp;
-        ncp(this.folder, outFolder, function (err) {
+        ncp(this.folder, outFolder, {
+            filter: function (fname) {
+                if (fname.includes(".idea") || fname.includes("cmake-build-debug")) {
+                    return false;
+                }
+                if (fname.endswith('mytmp_config.json')) {
+                    return false;
+                }
+                console.log(fname);
+                return true;
+            }
+        }, function (err) {
             if (err) {
                 console.error(err);
                 return;
@@ -73,14 +84,26 @@ var StaticFolderTempalte = /** @class */ (function (_super) {
             _this.replaceAllPlaceHolder(outFolder, config);
         });
     };
+    // has bug that can only replace in level 0
     StaticFolderTempalte.prototype.replaceAllPlaceHolder = function (folder, config) {
         fs.readdir(folder, function (e, items) {
+            // if (folder.includes('build')) {
+            //     return
+            // }
+            // if (folder == ".idea") {
+            //     return
+            // }
+            // if (folder == "mytmp_config.json") {
+            //     return
+            // }
             if (e) {
                 console.log(e);
                 return;
             }
             for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
                 var item = items_1[_i];
+                // console.log("folder: " + folder);
+                // console.log("item: " + item);
                 var fullPath = path.join(folder, item);
                 if (fs.statSync(fullPath).isFile()) {
                     var content = fs.readFileSync(fullPath, 'utf-8');
