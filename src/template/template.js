@@ -55,6 +55,7 @@ var StaticTempalte = /** @class */ (function (_super) {
     };
     return StaticTempalte;
 }(Template));
+var CONFIG_FILE_NAME = "mytmp_config.json";
 var StaticFolderTempalte = /** @class */ (function (_super) {
     __extends(StaticFolderTempalte, _super);
     function StaticFolderTempalte(folder) {
@@ -70,10 +71,9 @@ var StaticFolderTempalte = /** @class */ (function (_super) {
                 if (fname.includes(".idea") || fname.includes("cmake-build-debug")) {
                     return false;
                 }
-                if (fname.endswith('mytmp_config.json')) {
+                if (fname.endsWith(CONFIG_FILE_NAME)) {
                     return false;
                 }
-                console.log(fname);
                 return true;
             }
         }, function (err) {
