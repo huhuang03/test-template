@@ -8,7 +8,7 @@ install: helloworld.out
 	adb shell "chmod +x /data/local/tmp"
 
 run: install
-	adb shell "/data/local/tmp/helloworld.out"
+	adb shell '/data/local/tmp/helloworld.out; echo $$?'
 
 gdb: install
 	adb forward tcp:1337 tcp:1337

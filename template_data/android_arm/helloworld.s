@@ -11,6 +11,10 @@ _start:
     mov     %r0, $0				// exit status 0 (ok)
     mov     %r7, $1				// syscall 1 (exit)
     swi     $0
+
+.thumb
+_thumb_func:
+    b lr
 	
 .data
 message:
