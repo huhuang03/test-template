@@ -34,6 +34,15 @@ for (let t of p.templates) {
   })
 }
 
+parser.command({
+  command: '*',
+  handler() {
+    console.log(`All tmplates:`);
+    console.log(`\t${templateMgr.tempaltes.map((t) => t.name).join("\n\t")}`);
+  }
+})
+// console.log(`hello called`);
+
 parser.parse()
 
 // const argv = parser.argv

@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
-var Result = require('js_ex').Result;
+// why can't find js_ex??
+var Result = require('@huhuang03/js_ex').Result;
 var Config = /** @class */ (function () {
     function Config(name, templateName, outFolder) {
         this.name = name;

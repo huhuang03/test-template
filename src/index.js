@@ -35,5 +35,13 @@ for (var _i = 0, _a = p.templates; _i < _a.length; _i++) {
     var t = _a[_i];
     _loop_1(t);
 }
+parser.command({
+    command: '*',
+    handler: function () {
+        console.log("All tmplates:");
+        console.log("\t" + template_manager_1["default"].tempaltes.map(function (t) { return t.name; }).join("\n\t"));
+    }
+});
+// console.log(`hello called`);
 parser.parse();
 // const argv = parser.argv

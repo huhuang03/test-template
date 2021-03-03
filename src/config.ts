@@ -1,4 +1,5 @@
-var Result = require('js_ex').Result
+// why can't find js_ex??
+var Result = require('@huhuang03/js_ex').Result
 
 class Config {
     constructor(public name: string, public templateName: string, public outFolder: string) {
