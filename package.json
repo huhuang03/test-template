@@ -22,7 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "@huhuang03/js_ex": "0.0.4",
+    "@huhuang03/js_ex": "0.0.5",
     "ncp": "^2.0.0",
     "yargs": "^15.3.1"
   },
