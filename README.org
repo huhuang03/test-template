@@ -33,3 +33,11 @@ will create
 - no args, print all templates
 - t template work
 - replace all place holder
+
+** 这里要着重介绍一下android_arm
+如果你想在安卓手机上测试arm汇编代码。这你可以这样做：
+1. 当然，你要准给一个root了的手机
+2. 将android sdk中的gdbserver push到手机`/data/local/tmp`下，并增加可执行权限。
+3. 运行`mytmp android_arm`创建工程
+4. 修改`t_android_arm`工程Makefile中的sdk相关路径
+5. 一个窗口运行`make gdb`，一个运行`make gdb_client`。现在就可以单步你的测试代码了。
