@@ -5,7 +5,7 @@ import Config from '../config'
 
 abstract class ITemplate {
 
-    constructor(public name: string) {
+    protected constructor(public name: string) {
         if (!this.name) {
             throw "Must specify name";
         }
