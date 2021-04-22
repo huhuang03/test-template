@@ -2,7 +2,7 @@
   "name": "mytmp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "watch": "npm-watch",
@@ -31,7 +31,7 @@
     "@types/node": "^13.11.1"
   },
   "bin": {
-    "mytmp": "src/index.js",
-    "t": "src/index.js"
+    "mytmp": "lib/index.js",
+    "t": "lib/index.js"
   }
 }

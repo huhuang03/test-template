@@ -12,11 +12,11 @@ abstract class ITemplate {
     }
 
 
-    abstract write(outFolder: string, config: Config)
+    abstract write(outFolder: string, config: Config): void
 }
 
 export abstract class Template extends ITemplate {
-    constructor(name: string) {
+    protected constructor(name: string) {
         super(name)
     }
 
@@ -32,28 +32,17 @@ export abstract class Template extends ITemplate {
         });
     }
 }
-
-class StaticTempalte extends Template {
-    constructor(public name: string, public outFile: OutFile[]) {
-        super(name)
-    }
-
-    getOutput(): OutFile[] {
-        return this.outFile
-    }
-}
-
 const CONFIG_FILE_NAME = "mytmp_config.json"
 
-export class StaticFolderTempalte extends ITemplate {
+export class StaticFolderTemplate extends ITemplate {
     constructor(public folder: string) {
        super(path.basename(folder));
     }
 
     write(outFolder: string, config: Config) {
-        var ncp = require('ncp').ncp;
+        const ncp = require('ncp').ncp;
         ncp(this.folder, outFolder, {
-            filter: (fname) => {
+            filter: (fname: string) => {
                 if (fname.includes(".idea") || fname.includes("cmake-build-debug")) {
                     return false
                 }
@@ -74,30 +63,16 @@ export class StaticFolderTempalte extends ITemplate {
     // has bug that can only replace in level 0
     replaceAllPlaceHolder(folder, config: Config) {
         fs.readdir(folder, (e, items) => {
-            // if (folder.includes('build')) {
-            //     return
-            // }
-
-            // if (folder == ".idea") {
-            //     return
-            // }
-
-            // if (folder == "mytmp_config.json") {
-            //     return
-            // }
-
             if (e) {
                 console.log(e)
                 return
             }
 
-            for (var item of items) {
-                // console.log("folder: " + folder);
-                // console.log("item: " + item);
-                var fullPath = path.join(folder, item)
+            for (const item of items) {
+                const fullPath = path.join(folder, item);
                 if (fs.statSync(fullPath).isFile()) {
-                    var content = fs.readFileSync(fullPath, 'utf-8')
-                    content = content.replace(/\$NAME\$/g, config.name)
+                    let content = fs.readFileSync(fullPath, 'utf-8');
+                    content = content.replace(/\$NAME\$/g, config.templateName)
                     fs.writeFileSync(fullPath, content)
                 }
             }

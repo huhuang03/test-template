@@ -1,12 +1,12 @@
 import * as path from 'path'
 import * as fs from 'fs'
-import ITemplate, { StaticFolderTempalte } from './template';
+import ITemplate, { StaticFolderTemplate } from './template';
 
 class TemplateManager {
     tempaltes: ITemplate[] = []
 
     constructor() {
-        this.initialTempaltes() 
+        this.initialTempaltes()
     }
 
     initialTempaltes() {
@@ -30,7 +30,7 @@ class TemplateManager {
             return null
         }
 
-        return new StaticFolderTempalte(folderPath) 
+        return new StaticFolderTemplate(folderPath)
     }
 }
 
