@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "npm-watch",
-    "link": "yarn run build;npm link -f"
+    "link": "yarn run build && yarn link -f"
   },
   "watch": {
     "re-compile": {

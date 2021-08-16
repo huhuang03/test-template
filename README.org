@@ -7,7 +7,7 @@ So this project is for create by code.
 
 * Install
 - clone this project.
-- run `yarn run link`
+- run `yarn run build && yarn link -f`
 
 * Usage
 #+BEGIN_SRC shell
