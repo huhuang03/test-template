@@ -6,11 +6,11 @@ class TemplateManager {
     tempaltes: ITemplate[] = []
 
     constructor() {
-        this.initialTempaltes()
+        this.initialTemplates()
     }
 
-    initialTempaltes() {
-        var templateDataFolder = path.resolve(__dirname, "../../template_data")
+    initialTemplates() {
+        const templateDataFolder = path.resolve(__dirname, "../../template_data");
         if (!fs.existsSync(templateDataFolder)) {
             throw `Why ${templateDataFolder} doesn't exists`
         }
@@ -19,12 +19,12 @@ class TemplateManager {
             return fs.statSync(path.resolve(templateDataFolder, f)).isDirectory
         })
         .map((f) => {
-            return this.createTemplateFromFodler(path.resolve(templateDataFolder, f))
-        })
+            return this.createTemplateFromFolder(path.resolve(templateDataFolder, f))
+        }).filter(a => a).map(a => a!!)
     }
 
-    createTemplateFromFodler(folderPath: string): ITemplate {
-        var fullPath = path.resolve(folderPath)
+    createTemplateFromFolder(folderPath: string): ITemplate | null {
+        const fullPath = path.resolve(folderPath);
         if (!fs.existsSync(fullPath)) {
             console.error("file not exist when create template from folder, folder: ", folderPath);
             return null

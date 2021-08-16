@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "npm-watch",
-    "link": "npm run build;npm link -f"
+    "link": "yarn run build;npm link -f"
   },
   "watch": {
     "re-compile": {
@@ -22,7 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "@huhuang03/th_comm": "^0.0.2-rc1",
+    "@huhuang03/th_comm": "^0.0.2-rc4",
     "ncp": "^2.0.0",
     "yargs": "^15.3.1"
   },

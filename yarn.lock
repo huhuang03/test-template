@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@huhuang03/th_comm@^0.0.2-rc1":
-  version "0.0.2-rc1"
-  resolved "https://registry.npmjs.org/@huhuang03/th_comm/-/th_comm-0.0.2-rc1.tgz#cb4a22b7345a752d6acb0b13d55aeb39c21c43ba"
-  integrity sha512-mMUfhEd+A4iQiMXgpNjK/wt1FlF4bymY1ORQyTgxmL9czu9rHGgYjK96fV9CCfYbJfKOA3gZBYg6/NfKmHYAoA==
+"@huhuang03/th_comm@^0.0.2-rc4":
+  version "0.0.2-rc4"
+  resolved "https://registry.npmjs.org/@huhuang03/th_comm/-/th_comm-0.0.2-rc4.tgz#73a168d527ed25b66686ae6a4ebf8cecac1d5837"
+  integrity sha512-BwQKlYkl01aSqLAVx2VXBotwtAJ7cdV7SknVUh+/cAJb0Jxi5zxmZTn7jg3oI5Ao3FZ4tB2Q8rBxMLS4ymO9jw==
 
 "@types/node@^13.11.1":
   version "13.13.52"

@@ -1,7 +1,7 @@
-import * as fs from 'fs-extra'
 import * as path from 'path'
 import OutFile from "../out_file";
 import Config from '../config'
+import * as fs from "fs";
 
 abstract class ITemplate {
 
@@ -22,12 +22,16 @@ export abstract class Template extends ITemplate {
 
     abstract getOutput(): OutFile[]
 
+    private writeSingleFile(to: string, content: string) {
+        fs.writeFileSync(to, content);
+    }
+
     write(outFolder: string, config: Config) {
         this.getOutput().forEach(output => {
             if (!output.isFolder) {
-                fs.outputFileSync(path.resolve(outFolder, output.relatePath), output.content);
+                this.writeSingleFile(path.resolve(outFolder, output.relatePath), output.content);
             } else {
-                fs.mkdir(path.resolve(outFolder, output.relatePath))
+                fs.mkdirSync(path.resolve(outFolder, output.relatePath));
             }
         });
     }
@@ -61,7 +65,7 @@ export class StaticFolderTemplate extends ITemplate {
     }
 
     // has bug that can only replace in level 0
-    replaceAllPlaceHolder(folder, config: Config) {
+    replaceAllPlaceHolder(folder: string, config: Config) {
         fs.readdir(folder, (e, items) => {
             if (e) {
                 console.log(e)
