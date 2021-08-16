@@ -1,5 +1,4 @@
-// why can't find js_ex??
-var Result = require('@huhuang03/js_ex').Result
+import {Result} from '@huhuang03/th_comm';
 
 class Config {
     constructor(public templateName: string, public outFolder: string) {
@@ -9,7 +8,7 @@ class Config {
     validate() {
         this._fix_param();
         if (!this.templateName) {
-            return Result.error(`tempalteName(-t) must specified.`);
+            return Result.error(`templateName(-t) must specified.`);
         }
         return new Result();
     }

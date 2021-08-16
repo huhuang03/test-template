@@ -2,7 +2,7 @@ import {Template} from "../../template";
 import OutFile from "../../../out_file";
 import * as path from 'path';
 
-class TempalteCmake extends Template {
+class TemplateCmake extends Template {
     constructor() {
         super("cmake");
     }
@@ -16,4 +16,4 @@ class TempalteCmake extends Template {
     }
 }
 
-export default TempalteCmake
+export default TemplateCmake

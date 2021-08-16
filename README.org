@@ -5,15 +5,14 @@ A test project is a simple project for test some single through.
 And it's boring to create those project by hand.
 So this project is for create by code.
 
+* Install
+- clone this project.
+- run `yarn run link`
+
 * Usage
 #+BEGIN_SRC shell
 t template_name
 #+END_SRC
-
-
-* Install
-- clone this project.
-- run `npm run link`
 
 ** For example
 #+BEGIN_SRC
@@ -34,7 +33,7 @@ will create
 
 
 ** 这里要着重介绍一下android_arm
-如果你想在安卓手机上测试arm汇编代码。这你可以这样做：
+如果你想在安卓手机上单步arm汇编代码。这你可以这样做：
 1. 当然，你要准给一个root了的手机
 2. 将android sdk中的gdbserver push到手机`/data/local/tmp`下，并增加可执行权限。
 3. 运行`mytmp android_arm`创建工程

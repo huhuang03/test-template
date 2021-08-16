@@ -17,7 +17,7 @@ const parser = require('yargs')
     .option('tName', {
         alias: 't',
         type: 'string',
-        description: '[-t] The tempalte name'
+        description: '[-t] The template name'
     })
     .option('out', {
         alias: 'o',
