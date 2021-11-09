@@ -33,14 +33,4 @@ for (let t of p.templates) {
   })
 }
 
-// why you don't show the help??
-
-// parser.command({
-//   command: '*',
-//   handler() {
-//     console.log(`All tmplates:`);
-//     console.log(`\t${templateMgr.tempaltes.map((t) => t.name).join("\n\t")}`);
-//   }
-// })
-
 parser.parse()

@@ -2,6 +2,7 @@ import * as path from 'path'
 import OutFile from "../out_file";
 import Config from '../config'
 import * as fs from "fs";
+import {IGNORE_FOLDERS} from "../cons";
 
 abstract class ITemplate {
 
@@ -47,7 +48,7 @@ export class StaticFolderTemplate extends ITemplate {
         const ncp = require('ncp').ncp;
         ncp(this.folder, outFolder, {
             filter: (fname: string) => {
-                if (fname.includes(".idea") || fname.includes("cmake-build-debug")) {
+                if (!IGNORE_FOLDERS.includes(fname)) {
                     return false
                 }
                 if (fname.endsWith(CONFIG_FILE_NAME)) {
