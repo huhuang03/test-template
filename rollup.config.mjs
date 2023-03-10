@@ -18,7 +18,8 @@ export default [
     input: 'src/index.ts',
     output: {
       format: 'cjs',
-      file: pkg.main
+      file: pkg.main,
+      banner: '#!/usr/bin/env node\n'
     }
   }
 ]

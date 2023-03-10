@@ -36,6 +36,6 @@
     "typescript": "^4.9.5"
   },
   "bin": {
-    "tt": "bin/test-template"
+    "tt": "dist/index.cjs"
   }
 }
