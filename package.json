@@ -1,12 +1,12 @@
 {
-  "name": "mytmp",
+  "name": "@huhuang03/test-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.js",
+  "description": "A test template generator util",
+  "main": "dist/index.cjs",
   "scripts": {
-    "build": "tsc",
-    "watch": "npm-watch",
-    "link": "yarn run build && yarn link -f"
+    "b": "yarn run build",
+    "build": "rollup -c",
+    "i": "yarn global add file:$PWD"
   },
   "watch": {
     "re-compile": {
@@ -21,17 +21,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs-extra": "^9.0.0",
     "@huhuang03/th_comm": "^0.0.2-rc4",
+    "fs-extra": "^9.0.0",
     "ncp": "^2.0.0",
     "yargs": "^15.3.1"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/node": "^13.11.1",
     "@types/yargs": "^15.0.4",
-    "@types/node": "^13.11.1"
+    "rollup": "^3.17.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-ts": "^3.2.0",
+    "typescript": "^4.9.5"
   },
   "bin": {
-    "mytmp": "lib/index.js",
-    "t": "lib/index.js"
+    "tt": "dist/index.cjs"
   }
 }
