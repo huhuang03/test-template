@@ -17,6 +17,7 @@ export default [
     ],
     input: 'src/index.ts',
     output: {
+      sourcemap: true,
       format: 'cjs',
       file: pkg.main,
       banner: '#!/usr/bin/env node\n'
