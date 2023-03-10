@@ -1,9 +1,6 @@
-It's a tool to crate a test project by template type.
+It's boring to create a test project.
 
-
-A test project is a simple project for test some single through.
-And it's boring to create those project by hand.
-So this project is for create by code.
+This Project handle this.
 
 * Install
 - clone this project.
@@ -39,3 +36,5 @@ will create
 3. 运行`mytmp android_arm`创建工程
 4. 修改`t_android_arm`工程Makefile中的sdk相关路径
 5. 一个窗口运行`make gdb`，一个运行`make gdb_client`。现在就可以单步你的测试代码了。
+
+* Research

@@ -10,7 +10,7 @@ class TemplateManager {
     }
 
     initialTemplates() {
-        const templateDataFolder = path.resolve(__dirname, "../../template_data");
+        const templateDataFolder = path.resolve(__dirname, "../template_data");
         if (!fs.existsSync(templateDataFolder)) {
             throw `Why ${templateDataFolder} doesn't exists`
         }

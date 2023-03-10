@@ -7,13 +7,13 @@ export default [
   {
     plugins: [
       ts(),
-      copy({
-        targets: [{
-          src: 'template_data/**/*',
-          dest: 'lib/template_data',
-          flatten: false,
-        }]
-      })
+      // copy({
+      //   targets: [{
+      //     src: 'template_data/**/*',
+      //     dest: 'lib/template_data',
+      //     flatten: false,
+      //   }]
+      // })
     ],
     input: 'src/index.ts',
     output: {
