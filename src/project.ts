@@ -10,12 +10,12 @@ class Project {
     }
 
     build(config: Config) {
-        var configValidate = config.validate();
+        const configValidate = config.validate();
         if (!configValidate.isOk()) {
             console.error(configValidate.msg);
             return;
         }
-        var template = templateMgr.tempaltes.find((t) => t.name == config.templateName);
+        const template = templateMgr.tempaltes.find((t) => t.name == config.templateName);
 
         if (template == null) {
             throw `Can't find template ${config.templateName}`
