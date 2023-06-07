@@ -9,7 +9,7 @@ const p = new Project();
 const templates = templateMgr.tempaltes.map(t => t.name)
 
 const parser = require('yargs')
-    .scriptName("mytmp")
+    .scriptName("tt")
     .command('list', 'list all templates', () => {
         console.log(`All templates:`);
         console.log(`\t${templates.join("\n\t")}`);

@@ -1,0 +1,5 @@
+type="git"
+name="python_c_extension"
+
+[git]
+url="https://github.com/th-demos/pyton_cpython_extension"
