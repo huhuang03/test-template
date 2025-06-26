@@ -34,16 +34,15 @@ export class StaticFolderTemplate extends ITemplate {
   }
 
   write(config: ITemplateWriteConfig) {
-    console.log(`this.folder: ${this.folder}, ${config.outFolder}`)
     fs.copySync(this.folder, config.outFolder, {
       filter: (fname: string) => {
         if (!IGNORE_FOLDERS.includes(fname)) {
-          return false
+          return true
         }
         return !fname.endsWith(CONFIG_FILE_NAME);
       }
     })
-    // this.replaceAllPlaceHolder(config.outFolder)
+    this.replaceAllPlaceHolder(config.outFolder)
   }
 
   // has bug that can only replace in level 0
