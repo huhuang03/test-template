@@ -2,14 +2,16 @@ It's boring to create a test project.
 
 This Project handle this.
 
-* Install
-- clone this project.
-- run `yarn run build && yarn link -f`
-
 * Usage
 #+BEGIN_SRC shell
 t template_name
 #+END_SRC
+
+** template_name
+| ts    | simple ts |
+
+* Install
+- `npm install & npm run build & npm link`
 
 ** For example
 #+BEGIN_SRC

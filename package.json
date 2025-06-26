@@ -5,8 +5,7 @@
   "main": "dist/index.cjs",
   "scripts": {
     "b": "yarn run build",
-    "build": "rollup -c",
-    "i": "yarn global add file:$PWD"
+    "build": "rollup -c"
   },
   "watch": {
     "re-compile": {
