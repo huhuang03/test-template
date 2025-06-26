@@ -21,8 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "@huhuang03/th_comm": "^0.0.2-rc4",
-    "fs-extra": "^9.0.0",
-    "ncp": "^2.0.0",
+    "fs-extra": "^9.1.0",
     "yargs": "^15.3.1"
   },
   "devDependencies": {

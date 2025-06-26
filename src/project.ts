@@ -1,31 +1,9 @@
-import Config from './config'
-import ITemplate from './template/template';
-import templateMgr from './template/template_manager';
+import {ITemplate, ITemplateWriteConfig} from './template/ITemplate';
 
 class Project {
-    templates: ITemplate[] = []
-
-    constructor() {
-        this.templates = templateMgr.tempaltes
-    }
-
-    build(config: Config) {
-        const configValidate = config.validate();
-        if (!configValidate.isOk()) {
-            console.error(configValidate.msg);
-            return;
-        }
-        const template = templateMgr.tempaltes.find((t) => t.name == config.templateName);
-
-        if (template == null) {
-            throw `Can't find template ${config.templateName}`
-        }
-
-        console.log(`begin to write template ${config.templateName}`);
-
-        template.write(config.outFolder, config)
-    }
-
+  build(template: ITemplate, config: ITemplateWriteConfig) {
+    template.write({outFolder: config.outFolder || `t_${template.name}`})
+  }
 }
 
 export default Project;

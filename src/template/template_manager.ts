@@ -3,7 +3,7 @@ import * as fs from 'fs'
 import ITemplate, { StaticFolderTemplate } from './template';
 
 class TemplateManager {
-    tempaltes: ITemplate[] = []
+    templates: ITemplate[] = []
 
     constructor() {
         this.initialTemplates()
@@ -15,7 +15,7 @@ class TemplateManager {
             throw `Why ${templateDataFolder} doesn't exists`
         }
 
-        this.tempaltes = fs.readdirSync(templateDataFolder).filter((f) => {
+        this.templates = fs.readdirSync(templateDataFolder).filter((f) => {
             return fs.statSync(path.resolve(templateDataFolder, f)).isDirectory
         })
         .map((f) => {
@@ -34,6 +34,6 @@ class TemplateManager {
     }
 }
 
-var templateMgr = new TemplateManager()
+const templateMgr = new TemplateManager();
 
 export default templateMgr

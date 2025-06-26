@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 
-import Project from './project'
-import Config from './config'
-import templateMgr from './template/template_manager';
+import {getTemplates, writeTemplate} from './template';
 
-const p = new Project();
-
-const templates = templateMgr.tempaltes.map(t => t.name)
+const templates = getTemplates()
 
 const parser = require('yargs')
   .scriptName('tt')
@@ -27,11 +23,11 @@ const parser = require('yargs')
   })
   .demandCommand()
 
-for (let t of p.templates) {
+for (let t of templates) {
   parser.command(t.name, `create a ${t.name} type project`, () => {
   }, function () {
     const out = `t_${t.name}`;
-    p.build(new Config(t.name, out))
+    writeTemplate(t, {outFolder: out})
   })
 }
 
