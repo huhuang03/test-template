@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "run": "deno run -A src/main.ts"
+  },
+  "imports": {
+    "fs-extra": "npm:fs-extra@^11.3.3",
+    "yargs": "npm:yargs@^18.0.0"
+  }
+}

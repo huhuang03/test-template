@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-import {getTemplates, writeTemplate} from './template';
+import {getTemplates, writeTemplate} from './template/index.ts';
 
 const templates = getTemplates()
 
