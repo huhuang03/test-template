@@ -4,18 +4,15 @@ This Project handle this.
 
 * Usage
 #+BEGIN_SRC shell
-t template_name
+deno run run template_name
 #+END_SRC
 
 ** template_name
 | ts    | simple ts |
 
-* Install
-- `npm install & npm run build & npm link`
-
 ** For example
 #+BEGIN_SRC
-t cmake
+deno run run cmake
 #+END_SRC
 
 will create
