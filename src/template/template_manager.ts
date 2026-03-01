@@ -1,5 +1,6 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs'
+import {fileURLToPath} from 'node:url'
 import ITemplate, { StaticFolderTemplate } from './template.ts';
 
 class TemplateManager {
@@ -10,7 +11,8 @@ class TemplateManager {
     }
 
     initialTemplates() {
-        const templateDataFolder = path.resolve(__dirname, "../template_data");
+        const templateDataFolder = fileURLToPath(new URL("../../template_data", import.meta.url));
+        console.log(`templateDataFolder: ${templateDataFolder}`)
         if (!fs.existsSync(templateDataFolder)) {
             throw `Why ${templateDataFolder} doesn't exists`
         }

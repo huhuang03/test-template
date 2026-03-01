@@ -3,6 +3,7 @@
   "specifiers": {
     "npm:fs-extra@*": "11.3.3",
     "npm:fs-extra@^11.3.3": "11.3.3",
+    "npm:yargs@*": "18.0.0",
     "npm:yargs@18": "18.0.0"
   },
   "npm": {
