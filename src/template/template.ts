@@ -1,8 +1,8 @@
-import * as path from 'path'
-import OutFile from '../out_file';
-import * as fs from 'fs-extra';
-import {IGNORE_FOLDERS} from '../cons';
-import {ITemplate, ITemplateWriteConfig} from './ITemplate';
+import * as path from 'node:path'
+import OutFile from '../out_file.ts';
+import * as fs from 'npm:fs-extra';
+import {IGNORE_FOLDERS} from '../cons.ts';
+import {ITemplate, ITemplateWriteConfig} from './ITemplate.ts';
 
 export abstract class Template extends ITemplate {
   protected constructor(name: string) {

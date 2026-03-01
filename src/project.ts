@@ -1,4 +1,4 @@
-import {ITemplate, ITemplateWriteConfig} from './template/ITemplate';
+import {ITemplate, ITemplateWriteConfig} from './template/ITemplate.ts';
 
 class Project {
   build(template: ITemplate, config: ITemplateWriteConfig) {
